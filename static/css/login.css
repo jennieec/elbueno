@@ -1,0 +1,305 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400|Passion+One:400");
+
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+
+* {
+	margin: 0px; 
+	padding: 0px; 
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+	font-family: "Source Sans Pro", sans-serif;
+}
+
+/*---------------------------------------------*/
+a {
+	font-family: "Source Sans Pro", sans-serif;
+	font-size: 20px;
+	line-height: .8;
+	color: #666666;
+	margin: 0px;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+
+a:focus {
+	outline: none !important;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/*---------------------------------------------*/
+h1,h2,h3,h4,h5,h6 {
+	margin: 0px;
+}
+
+p {
+	font-family: "Source Sans Pro", sans-serif;
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+}
+
+ul, li {
+	margin: 0px;
+	list-style-type: none;
+}
+
+
+/*---------------------------------------------*/
+input {
+	outline: none;
+	border: none;
+}
+
+textarea {
+  outline: none;
+  border: none;
+  
+}
+
+textarea:focus, input:focus {
+  border-color: transparent !important;
+}
+
+input::-webkit-input-placeholder { color: #6d6d6d;}
+input:-moz-placeholder { color: #6d6d6d;}
+input::-moz-placeholder { color: #6d6d6d;}
+input:-ms-input-placeholder { color: #6d6d6d;}
+
+textarea::-webkit-input-placeholder { color: #6d6d6d;}
+textarea:-moz-placeholder { color: #6d6d6d;}
+textarea::-moz-placeholder { color: #6d6d6d;}
+textarea:-ms-input-placeholder { color: #6d6d6d;}
+
+/*---------------------------------------------*/
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+iframe {
+	border: none !important;
+}
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Utility ]*/
+.txt1 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  line-height: 3;
+  color: #7c7c7c;
+}
+
+.txt2 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  line-height: 2;
+  color: #7c7c7c;
+}
+
+.txt3 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  line-height: 9;
+  color: #999999;
+}
+
+.hov1:hover {
+  color: #999999;
+  text-decoration: underline;
+}
+
+
+/*//////////////////////////////////////////////////////////////////
+[ login ]*/
+
+.container-login100 {
+  width: 100%;  
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.container-login100::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.876);
+  background: -webkit-linear-gradient(left, #24003b91, #012f0586);
+  background: -o-linear-gradient(left, #24003b91, #012f0586);
+  background: -moz-linear-gradient(left, #24003b91, #012f0586);
+  background: linear-gradient(left, #24003b91, #012f0586);
+  pointer-events: none;
+}
+
+.wrap-login100 {
+  width: 800px;
+  height: 500px;
+  background: #0f0f0f;
+  border-radius: 10px;
+  overflow: hidden;
+
+  box-shadow:  1px 1px 8px 8px #0000008c;
+  -moz-box-shadow:  1px 1px 8px 8px #0000008c;
+  -webkit-box-shadow: 1px 1px 8px 8px #0000008c;
+  -o-box-shadow:   1px 1px 8px 8px #0000008c;
+  -ms-box-shadow:   1px 1px 8px 8px #0000008c;
+}
+
+
+/*==================================================================
+[ Form ]*/
+
+.login100-form {
+  width: 100%;
+}
+
+.login100-form-title {
+  display: block;
+  font-family: 'Passion One';
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
+  text-align: center;
+}
+
+/*------------------------------------------------------------------
+[ Input ]*/
+
+.wrap-input100 {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.input100 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 25px;
+  color: rgba(51, 7, 109, 0.89);
+  line-height: 1.2;
+
+  display: block;
+  width: 100%;
+  height: 62px;
+  background: transparent;
+  padding: 0 20px 0 23px;
+}
+
+
+/*------------------------------------------------------------------
+[ Focus Input ]*/
+
+.focus-input100 {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  border-radius: 20px;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+/*------------------------------------------------------------------
+[ Button ]*/
+.container-login100-form-btn {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.login100-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 160px;
+  height: 50px;
+  background-color: #7103bb78;
+  border-radius: 25px;
+
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+
+  box-shadow:1px 1px 8px 3px #1d012f;
+  -moz-box-shadow: 1px 1px 8px 3px  #1d012f;
+  -webkit-box-shadow: 1px 1px 8px 3px  #1d012f;
+  -o-box-shadow: 1px 1px 8px 3px  #1d012f;
+  -ms-box-shadow: 1px 1px 8px 3px  #1d012f;
+}
+
+.login100-form-btn:hover {
+  background-color:  1px 1px 10px 1px #9900ff;
+  box-shadow: 1px 1px 10px 1px #9900ff;
+  -moz-box-shadow:  1px 1px 10px 1px #9900ff;
+  -webkit-box-shadow:  1px 1px 10px 1px #9900ff;
+  -o-box-shadow: 1px 1px 10px 1px #9900ff;
+  -ms-box-shadow:  1px 1px 10px 1px #9900ff;
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ Responsive ]*/
+
+@media (max-width: 480px) {
+  .wrap-login100 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

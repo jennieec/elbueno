@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Inicio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intro.js@3.0.1/minified/introjs.min.css">
+	<link href="../static/css/main.css" rel="stylesheet">
+</head>
+
+<!-- Nav -->
+<nav role="navigation" class="nav">
+	<ul class="nav-items">
+		<li class="nav-item">
+			<a href="/index" class="nav-link"><span>Inicio</span></a>
+		</li>
+		<li class="nav-item">
+			<a href="/index" class="nav-link" id="step-nueve"><span>Reclutadores</span></a>
+		</li>
+		<li class="nav-item">
+			<a href="/" class="nav-link" id="step-diez"><span>Cerrar sesión</span></a>
+		</li>
+	</ul>
+</nav>
+
+<body id="top">
+
+	<!-- Banner -->
+	<section id="banner" data-video="../static/images/banner">
+		<div class="inner">
+			<header>
+				<h1>Go faster</h1>
+				<p> Brindamos servicios a empresas para contratar personal que trabaje dentro o fuera de la empresa que
+					lo soliciten.</p>
+				<p>Consulta el proceso de los aspirantes que tenemos registrados.</p>
+			</header>
+			<a href="#main" class="more">Learn More</a>
+		</div>
+	</section>
+
+	<!-- Main -->
+	<div id="main">
+		<div class="inner">
+			<header>
+				<h1 id="step-uno">Aspirantes</h1>
+			</header>
+		</div>
+	</div>
+	<!-- Boxes -->
+	<div class="thumbnails">
+		{% for evento in eventos %}
+
+		<div class="box">
+				<a class="image fit"><img src="../static/images/{{evento.13}}" alt="" /></a>
+				<form action="/contrato" method="POST">
+				<div class="inner">
+					<h3>Nombre:</h3>
+					<textarea name="Nombre">{{evento.1}}</textarea>
+					<h3>Empresa:</h3>
+					<textarea name="Empresa">{{evento.2}}</textarea>
+					<h3>Edad:</h3>
+					<textarea name="Edad">{{evento.3}} años</textarea>
+					<h3>Dirección:</h3>
+					<textarea name="Domicilio">{{evento.4}}</textarea>
+					<h3>Correo:</h3>
+					<textarea name="Correo">{{evento.5}}</textarea>
+					<h3>Puesto:</h3>
+					<textarea name="Puesto">{{evento.6}}</textarea>
+					<h3>Área:</h3>
+					<textarea name="Area">{{evento.7}}</textarea>
+					<h3>Sueldo:</h3>
+					<textarea name="Sueldo">{{evento.8}} $</textarea>
+					<h3>Tipo de contrato:</h3>
+					<textarea name="Tipo">{{evento.9}}</textarea>
+					<h3>Fecha de ingreso:</h3>
+					<textarea name="Fecha">{{evento.10}}</textarea>
+					<h3>Reclutador:</h3>
+					<textarea name="Reclutador">{{evento.11}}</textarea>
+				</form>
+				
+				<h3 id="step-dos"><input type="file" multiple="multiple"></input></h3>
+				<form action="/borrar" method="POST">
+					<textarea name="borrid" id="borrid" style="display:none">{{evento.0}}</textarea>
+					<button id="btn_bor" type="button" class="button style2 fit">Subir identificación oficial</button>
+				</form>
+				<h3 id="step-tres"><input type="file" multiple="multiple"></input></h3>
+				<form action="/borrar2" method="POST">
+					<textarea name="borrid2" id="borrid2" style="display:none">{{evento.0}}</textarea>
+					<button id="btn_bor2" type="button" class="button style2 fit">Subir comprobante de domicilio</button>
+				</form>
+				
+				<h3 id="step-cuatro"><button type="submit" class="button style2 fit" name="contrato" id="contrato">Crear contrato</button></h3>
+				<form action="/borrar3" method="POST">
+					<textarea name="borrid3" id="borrid3" style="display:none" >{{evento.0}}</textarea>
+					<button id="btn_bor3" type="button" class="button style2 fit">Validar contrato</button>
+				</form>
+				
+				<form action="/borrar4" method="POST">
+					<textarea name="borrid4" id="borrid4" style="display:none" >{{evento.0}}</textarea>
+					<button id="btn_bor4" type="button" class="button style2 fit">Enviar contrato</button>
+				</form>
+				
+				<h3>Proceso: </h3><p></p>
+					{% if evento.12 == 1%}
+					<div class="progress-bar" role="progressbar" id="progress" style="width: 0%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> 0% </div>
+					{% endif %}
+					{% if evento.12 == 2%}
+					<div class="progress-bar" role="progressbar" id="progress" style="width: 25%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> 25% </div>
+					{% endif %}
+					{% if evento.12  == 3%}
+					<div class="progress-bar" role="progressbar" id="progress" style="width: 50%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"> 50% </div>
+					{% endif %}
+					{% if evento.12 == 4%}
+					<div class="progress-bar" role="progressbar" id="progress" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> 75% </div>
+					{% endif %}
+					{% if evento.12 == 5%}
+					<div class="progress-bar" role="progressbar" id="progress" style="width: 100%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> 100% </div>
+					{% endif %}
+				</div>
+				<p></p>
+		</div>
+		{% endfor %}
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<h1 id="step-ocho">¿Tienes alguna duda? Preguntale a nuestro bot:</h1>
+			<p></p>
+			<iframe
+				src='https://webchat.botframework.com/embed/gfbot-bot-?s=iT3vagHEDqk.drDnGQhLe2K0v7Wb0Ak1qQm3K7E-W52kQEwjQuryoDY'
+				style='min-width: 700px; width: 100%; min-height: 200px;'></iframe>
+			<p></p>
+			<h1>Go faster</h1>
+			<p></p>
+			<p>"La organización que entiende que los servicios de contratación son aplicables y congruentes con su
+				estrategia de negocios, puede obtener ventajas competitivas y mejorar sus procesos de producción o
+				generación de ingresos" - Mauricio Velásquez. </p>
+			<p class="copyright">&copy; Go faster. Design: <a
+					href="https://www.linkedin.com/in/jennifer-paola-enr%C3%ADquez-cedillo-26087218a/">Jennifer
+					Enriquez</a></p>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="https://cdn.jsdelivr.net/npm/intro.js@3.0.1/minified/intro.min.js"></script>
+	<script src="../static/assets/js/jquery.min.js"></script>
+	<script src="../static/assets/js/jquery.scrolly.min.js"></script>
+	<script src="../static/assets/js/jquery.poptrox.min.js"></script>
+	<script src="../static/assets/js/skel.min.js"></script>
+	<script src="../static/assets/js/util.js"></script>
+	<script src="../static/assets/js/main.js"></script>
+	<script src="../static/assets/js/nav.js"></script>
+	<script src="../static/assets/js/guia.js"></script>
+	<script>
+		$('#btn_bor').click(function(){
+		  
+		  var borrid = document.getElementById('borrid').value;
+		  
+		  $.ajax({
+			type: 'POST',
+			url: '/borrar',
+			headers:{
+			  'Content-Type': 'application/json'
+			},
+			data: JSON.stringify({"borrid":borrid }),
+			dataType: "json",
+			success: function(res){
+			  alert("Se ha validado la identificación oficial exitosamente");
+			},
+			error: function(res){
+			  alert("algo salio mal")
+			}
+		  })
+		})
+
+		$('#btn_bor2').click(function(){
+		  
+		  var borrid2 = document.getElementById('borrid2').value;
+		  
+		  $.ajax({
+			type: 'POST',
+			url: '/borrar2',
+			headers:{
+			  'Content-Type': 'application/json'
+			},
+			data: JSON.stringify({"borrid2":borrid2 }),
+			dataType: "json",
+			success: function(res){
+			  alert("Se ha validado el comprobante de domicilio exitosamente");
+			},
+			error: function(res){
+			  alert("algo salio mal")
+			}
+		  })
+		})
+
+		$('#btn_bor3').click(function(){
+		  
+		  var borrid3 = document.getElementById('borrid3').value;
+		  
+		  $.ajax({
+			type: 'POST',
+			url: '/borrar3',
+			headers:{
+			  'Content-Type': 'application/json'
+			},
+			data: JSON.stringify({"borrid3":borrid3 }),
+			dataType: "json",
+			success: function(res){
+			  alert("Se creado el contrato exitosamente");
+			},
+			error: function(res){
+			  alert("algo salio mal")
+			}
+		  })
+		})
+
+
+		$('#btn_bor4').click(function(){
+		  
+		  var borrid4 = document.getElementById('borrid4').value;
+		  
+		  $.ajax({
+			type: 'POST',
+			url: '/borrar4',
+			headers:{
+			  'Content-Type': 'application/json'
+			},
+			data: JSON.stringify({"borrid4":borrid4 }),
+			dataType: "json",
+			success: function(res){
+			  alert("Se enviado el contrato exitosamente");
+			},
+			error: function(res){
+			  alert("algo salio mal")
+			}
+		  })
+		})
+	  </script>
+</body>
+
+</html>
